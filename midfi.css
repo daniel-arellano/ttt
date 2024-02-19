@@ -1,0 +1,90 @@
+* {
+    margin: unset; 
+    padding: unset;
+}
+
+body {
+    height: 100vh;
+    background-color: black;
+}
+  
+section { 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto 0 auto;
+}
+
+game { 
+    display: grid;
+    width: 255px;
+    border-radius: 5px;
+}
+
+.text {
+    margin: 40px auto 0;
+    place-items: center;
+    height: 40px;
+    font: 2em arial, sans-serif;
+    color: orange;
+}
+
+.board {
+    grid: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 4px;
+    height: 255px;
+}
+
+.board,
+.button-choices { margin: 10px auto 0; }
+
+.button-choices {
+    grid-template-columns: repeat(20, 1fr);
+    align-content: center;
+    height: 50px;
+    column-gap: 4px;
+    grid-template-rows: 1fr;
+}
+
+.choice {
+    background-image: linear-gradient(yellow, #ffac33);
+    height: 50px;
+    border: 3px outset #feac32;
+    font-size: 2.5em;
+    color: black;
+}
+
+.choice:hover,
+.choice:focus { opacity: 0.8; }
+
+.hide { display: none; }
+
+#buttonTeamX { grid-column: 1 / 11; }
+#buttonTeamO { grid-column: 11 / 21; }
+
+#buttonReset {
+    grid-column: 1 / 21;
+    background-image: linear-gradient(red, firebrick);
+    border: 3px solid maroon;
+    color: ghostwhite;
+    font-size: 1.2em
+}
+
+.square { font-size: 4em; }
+.new { background-color: midnightblue; }
+.active {
+    background-color: steelblue;
+    border: 2px outset skyblue;
+}
+
+.off { background-color: lime; }
+
+.active:enabled:hover{ background-color: lightsteelblue; }
+.claimed { background-color: white; }
+
+.new:disabled,
+.claimed:disabled,
+.active:hover { border-style: none; }
+
+.player { color:cornflowerblue; }
+.bot { color:crimson; }
